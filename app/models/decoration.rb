@@ -1,0 +1,2 @@
+class Decoration < ApplicationRecord
+end
