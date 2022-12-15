@@ -16,7 +16,6 @@ scope module: :public do
   resources :ores, only: [:index,:show]
 
   get 'customers/my_page' =>"customers#show"
-  get 'customers/my_page' =>"customers#show"
   get 'customers/information/edit' => 'customers#edit'
   patch 'customers/information' => 'customers#update'
   get 'customers/unsubscribe' => 'customers#unsubscribe'
