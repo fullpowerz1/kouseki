@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2022_12_12_070852) do
 
   create_table "ores", force: :cascade do |t|
     t.integer "genre_id", null: false
-    t.string "ore", default: "", null: false
+    t.string "stone", default: "", null: false
     t.text "introduction", default: "", null: false
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
