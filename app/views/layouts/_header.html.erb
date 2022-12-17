@@ -1,6 +1,7 @@
-<div style="background-color:#ADB9CA;">
+<header class="ness">
   <div class="container mb-5">
     <div class="row">
+
       <!--後にロゴを入れる。-->
 
       <!--customerのログイン-->
@@ -9,19 +10,19 @@
           <!--ボタンの右揃え-->
           <div class="text-right">
             <!--ボタン4つ-->
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light mt-1">
               <%= link_to 'マイページ',customers_my_page_path, class: "text-dark" %>
             </button>
 
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light mt-1">
               <%= link_to '鉱石一覧',ores_path, class: "text-dark" %>
             </button>
 
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light mt-1">
               <%= link_to 'ランキング入力',new_ranking_path, class: "text-dark" %>
             </button>
 
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light mt-1">
               <%= link_to 'ログアウト',destroy_customer_session_path, method: :delete, class: "text-dark" %>
             </button>
 
@@ -33,23 +34,23 @@
             <!--ボタンの右揃え-->
             <div class="text-right">
               <!--ボタン5つ-->
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to 'ランキング一覧',admin_rankings_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to '鉱石一覧',admin_ores_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to '会員一覧',admin_customers_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to 'ジャンル一覧',admin_genres_path, class: "text-dark" %>
               </button>
 
-             <button type="button" class="btn btn-light">
+             <button type="button" class="btn btn-light mt-1">
                 <%= link_to 'ログアウト',destroy_admin_session_path, method: :delete, class: "text-dark" %>
              </button>
 
@@ -61,19 +62,19 @@
             <!--ボタンの右揃え-->
             <div class="text-right">
               <!--ボタン4つ-->
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to 'About',about_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to '鉱石一覧',ores_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to '新規登録',new_customer_registration_path, class: "text-dark" %>
               </button>
 
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn btn-light mt-1">
                 <%= link_to 'ログイン',new_customer_session_path, class: "text-dark" %>
               </button>
 
@@ -83,4 +84,4 @@
 
     </div>
   </div>
-</div>
+</header>
