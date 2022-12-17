@@ -25,14 +25,25 @@
       <!--鉱石の画像-->
       <h1>新着鉱石</h1>
       <div class="container-fluid">
-        <div class="row">
+       <div class="row">
 
+          <!--鉱石の繰り返し処理-->
           <div class='col-md-12 d-flex flex-row'>
-            <%= link_to ore_path(ore.id) do %>
+            <% @ores.each do |ore| %>
+              <div class="col-md-3">
+                <%= link_to ore_path(ore.id) do %>
+                  <%= image_tag ore.image, size: "200x200" %>
+                <% end %><br>
+                <% ore.stone %>
+              </div>
             <% end %>
           </div>
-
         </div>
+
+          <div class="text-right">
+            <%= link_to "全ての商品を見る>", ores_path %>
+          </div>
+
       </div>
 
     </div>
