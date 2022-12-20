@@ -1,6 +1,14 @@
 <footer class="ness2">
   <div class="container mb-5">
     <div class="row no-gutters">
+
+      <% unless customer_signed_in? %>
+        <div class='col-md-5 offset-md-5 d-flex align-items-center'>
+          <button type="button" class="btn btn-light mt-1">
+            <%= link_to 'ゲストログイン（閲覧用）', party_guest_sign_in_path, method: :post %>
+          </button>
+        </div>
+
     </div>
   </div>
 </footer>

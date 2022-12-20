@@ -2,7 +2,17 @@ Rails.application.routes.draw do
 # 会員用1
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
-    sessions: 'public/sessions'
+    sessions: 'public/sessions',
+  }
+
+# ゲストログイン
+  devise_scope :customers do
+    post 'party/guest_sign_in', to: 'party/sessions#guest_sign_in'
+  end
+
+  devise_for :party, controllers: {
+    registrations: 'party/registrations',
+    passwords: 'party/passwords'
   }
 
 # 検索機能
