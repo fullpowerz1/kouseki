@@ -102,6 +102,20 @@
       </div>
     </div>
 
+    <!--電話番号-->
+    <div class="row mt-2">
+      <div class="col-3">
+        <%= f.label :"電話番号(ハイフンなし)" %>
+      </div>
+
+      <!--入力欄-->
+      <div class="col-3">
+        <%= f.text_field :phone_number, autofocus: true, class: "name", placeholder: "0000000000" %>
+      </div>
+    </div>
+
+
+
 
   <% end %>
 

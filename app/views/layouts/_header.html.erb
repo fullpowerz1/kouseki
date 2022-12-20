@@ -6,25 +6,17 @@
 
       <!--customerのログイン-->
       <% if customer_signed_in? %>
-        <div class='col-md-5 offset-md-5 d-flex align-items-center'>
+        <div class='col-md-8 offset-md-4 d-flex align-items-center'>
           <!--ボタンの右揃え-->
           <div class="text-right">
             <!--ボタン4つ-->
-            <button type="button" class="btn btn-light mt-1">
-              <%= link_to 'マイページ',customers_my_page_path, class: "text-dark" %>
-            </button>
+              <%= link_to 'マイページ',customers_my_page_path, class: "text-dark btn btn-light mt-1" %>
 
-            <button type="button" class="btn btn-light mt-1">
-              <%= link_to '鉱石一覧',ores_path, class: "text-dark" %>
-            </button>
+              <%= link_to '鉱石一覧',ores_path, class: "text-dark btn btn-light mt-1" %>
 
-            <button type="button" class="btn btn-light mt-1">
-              <%= link_to 'ランキング入力',new_ranking_path, class: "text-dark" %>
-            </button>
+              <%= link_to 'ランキング入力',new_ranking_path, class: "text-dark btn btn-light mt-1" %>
 
-            <button type="button" class="btn btn-light mt-1">
-              <%= link_to 'ログアウト',destroy_customer_session_path, method: :delete, class: "text-dark" %>
-            </button>
+              <%= link_to 'ログアウト',destroy_customer_session_path, method: :delete, class: "text-dark btn btn-light mt-1" %>
 
           </div>
         </div>
