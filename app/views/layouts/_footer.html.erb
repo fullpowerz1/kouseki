@@ -4,10 +4,11 @@
 
       <% unless customer_signed_in? %>
         <div class='col-md-5 offset-md-5 d-flex align-items-center'>
-          <button type="button" class="btn btn-light mt-1">
-            <%= link_to 'ゲストログイン（閲覧用）', party_guest_sign_in_path, method: :post %>
+          <button type="button" class="btn btn-light mt-5">
+            <%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
           </button>
         </div>
+      <% end %>
 
     </div>
   </div>

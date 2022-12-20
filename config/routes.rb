@@ -6,14 +6,9 @@ Rails.application.routes.draw do
   }
 
 # ゲストログイン
-  devise_scope :customers do
-    post 'party/guest_sign_in', to: 'party/sessions#guest_sign_in'
+  devise_scope :customer do
+    post 'public/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end
-
-  devise_for :party, controllers: {
-    registrations: 'party/registrations',
-    passwords: 'party/passwords'
-  }
 
 # 検索機能
   get "search" => "searches#search"
