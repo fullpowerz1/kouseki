@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="m-md-2"><br></div>
+  <div class="row">
+
+    <h4 class="col-md-2 mx-auto text-center teo">
+      <strong>鉱石一覧</strong>
+    </h4>
+
+    <!--新規鉱石登録へ-->
+    <div class="col-md-5 mx-auto text-right">
+      <%= link_to "+", new_admin_ore_path, class: "h1 text-decoration-none text-dark", 'data-turbolinks': false %>
+    </div>
+  </div>
+
+  <table class="table table-hover table-bordered">
+
+    <thead class="text-white atora">
+
+      <tr>
+        <th>鉱石ID</th>
+        <th>鉱石名</th>
+        <th>ジャンル</th>
+        <th>ステータス</th>
+      </tr>
+
+    </thead>
+
+    <tbody class="haku">
+
+      <% @ores.each do |ore| %>
+
+        <tr>
+          <td><%= ore.id %></td>
+          <td><%= link_to ore.stone, admin_ore_path(ore) %></td>
+          <td><%= ore.genre.stone</td>
+
+          <% if ore.is_active == true %>
+            <td class="text-success font-weight-bold">上位</td>
+          <% else %>
+            <td class="text-danger">選外</td>
+          <% end %>
+
+        </tr>
+
+      <% end %>
+
+    </tbody>
+
+  </table>
+
+</div>
