@@ -5,7 +5,14 @@ class Public::RankingsController < ApplicationController
     @current_customer = current_customer
   end
 
+  def complete
+  end
 
+  def create
+    @ranking = Ranking.new(ranking_params)
+    @ranking.save!
+    redirect_to rankings_complete_path
+  end
 
 
   def show
@@ -13,4 +20,9 @@ class Public::RankingsController < ApplicationController
     @ranking_details = @ranking.ranking_details
   end
 
+  private
+
+  def ranking_params
+    params.require(:ranking).permit(:customer_id, :ore, :type, :name, :amount, :rank, :status)
+  end
 end

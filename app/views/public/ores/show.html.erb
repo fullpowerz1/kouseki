@@ -16,7 +16,7 @@
 
       <!--今回hiddenは付かない。-->
       <% if customer_signed_in? %>
-        <%= form_with model: @ranking, url: rankings_path do |f| %>
+        <%= form_with model: @ranking, url: new_ranking_path do |f| %>
 
         <div class= 'container-fluid'>
           <div class="row">
