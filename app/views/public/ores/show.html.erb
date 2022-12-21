@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <!--ジャンル検索-->
+    <div class="col-md-2">
+      <%= render 'admin/genres/search', genres: @genres %>
+    </div>
+
+    <div class='col-md-4'>
+      <%= image_tag @ore.image, size: "200x200" %>
+    </div>
+
+    <div class='col-md-6'>
+      <!--stoneはnameカラムと同意義-->
+      <h2><%= @ore.stone %></h2>
+      <p><%= @ore.introduction %></p><br>
+
+      <!--今回hiddenは付かない。-->
+      <% if customer_signed_in? %>
+        <%= form_with model: @ranking, url: rankings_path do |f| %>
+
+        <div class= 'container-fluid'>
+          <div class="row">
+
+            <!--セレクトボックス-->
+            <div class="col-md-2">
+              <%= f.select :amount, *[1..10], {include_blank: "個数選択"} %>
+            </div>
+
+            <!--ランキング入力ボタン-->
+            <div class="col-md-3">
+              <%= f.submit 'ランキングへ移動', class: "btn btn-success" %>
+            </div>
+
+          </div>
+        </div>
+
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

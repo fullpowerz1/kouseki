@@ -8,6 +8,7 @@ class Public::OresController < ApplicationController
   def show
     @genres = Genre.all
     @ore = Ore.find(params[:id])
+    @current_customer = current_customer
   end
 
 end

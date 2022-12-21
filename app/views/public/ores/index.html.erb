@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-
-    <!--ジャンル検索-->
-    <div class="col-md-2">
-      <%= render 'admin/genres/search', genres: @genres %>
-    </div>
-
     <div class='col-md-10'>
+    <!--ジャンル検索-->
+      <div class="col-md-2">
+        <%= render 'admin/genres/search', genres: @genres %>
+      </div>
+
       <h3 class="d-inline">鉱石一覧</h3>
       <h5 class="d-inline">(全<%= @ores.count %>件)</h5>
 
