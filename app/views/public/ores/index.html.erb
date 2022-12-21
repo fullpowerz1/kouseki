@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+
+    <!--ジャンル検索-->
+    <div class="col-md-2">
+      <%= render 'admin/genres/search', genres: @genres %>
+    </div>
+
+    <div class='col-md-10'>
+      <h3 class="d-inline">鉱石一覧</h3>
+      <h5 class="d-inline">(全<%= @ores.count %>件)</h5>
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <!--鉱石の繰り返し処理-->
+          <% @ores.each do |ore| %>
+            <div class="col-3 ">
+
+              <%= link_to ore_path(ore.id) do %>
+                <%= image_tag ore.image, size: "180x180" %>
+              <% end %><br>
+
+              <%= ore.stone %>
+            </div>
+          <% end %>
+        </div>
+
+      <div class="row">
+        <div class='col-md-12'>
+          <%= paginate @ores %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

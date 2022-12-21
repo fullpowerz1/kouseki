@@ -1,0 +1,23 @@
+<div class = "text-left">
+  <table class="border border-dark col-10">
+
+    <thead>
+      <tr class = "text-center">
+        <th class="border-bottom border-dark messi">ジャンル一覧</th>
+      </tr>
+    </thead>
+
+    </tbody>
+      <% genres.each do |genre| %>
+        <tr class = "text-center">
+          <td class = "text-secondary border-bottom border-dark h-50">
+            <%= link_to items_path(genre.id:genre.id), class: "text-dark" do %>
+              <%= genre.name %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
