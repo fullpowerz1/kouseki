@@ -8,9 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Kouseki
   class Application < Rails::Application
+    config.time_zone = 'Asia/Tokyo'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
+    config.i18n.default_locale = :ja
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -18,5 +19,6 @@ module Kouseki
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_record.default_timezone = :local
   end
 end

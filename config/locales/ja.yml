@@ -1,0 +1,6 @@
+  ja:
+    enums:
+      ranking:
+        rank:
+          rank1: "1位"
+          rank2: "2位"
