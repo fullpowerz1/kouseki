@@ -5,6 +5,10 @@ class Public::RankingsController < ApplicationController
     @current_customer = current_customer
   end
 
+  def confirm
+    @ranking = Ranking.new(ranking_params)
+  end
+
   def complete
   end
 

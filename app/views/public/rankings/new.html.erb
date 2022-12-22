@@ -1,0 +1,30 @@
+<div class="container pt-4">
+
+    <div class="row">
+      <h3 class="teo">ランキング情報入力</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-10 mx-auto pt-4">
+
+        <%= form_with model: @order, url: rankings_confirm_path, local:true do |f| %>
+
+          <div>
+            <!--順位-->
+            <h3>
+              <%= f.label :rank, "順位" %>
+            </h3>
+
+            <div class="ml-3">
+              <%= f.radio_button :rank, "rank1", checked: "checked" %>
+              <%= f.label :rank, "1位" %>
+            </div>
+
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+</div>
