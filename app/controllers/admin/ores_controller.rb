@@ -19,6 +19,10 @@ class Admin::OresController < ApplicationController
     @ore_new = Ore.new
   end
 
+  def edit
+    @ore = Ore.find(params[:id])
+  end
+
   def update
     @ore = Ore.find(params[:id])
     @ore.update(ore_params)
