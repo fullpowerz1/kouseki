@@ -1,0 +1,104 @@
+<div class="container">
+
+  <div class="row mb-5">
+    <h4 class="col col-md-2 offset-md-2 text-center mt-3 teo">
+      <strong>マイページ</strong>
+    </h4>
+  </div>
+
+  <div class="row mb-3">
+    <h5 class="col col-md-2 text-center offset-md-1">
+      <strong>　　　　登録情報</strong>
+    </h5>
+
+    <!--編集ボタン-->
+    <div class="col col-md-3">
+      <%= link_to "　編集する　", customers_information_edit_path, class: "btn btn-success btn-block" %>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+
+    <table class="table col col-md-8 offset-md-2 sora">
+
+      <tr>
+        <td class="baba">氏名</td>
+        <td class="haba">
+
+          <span class="mr-2">
+            <%= @customer.last_name %>
+          </span>
+
+          <span>
+            <%= @customer.first_name %>
+          </span>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#CCFFFF">カナ</td>
+        <td>
+
+          <span class="mr-2">
+            <%= @customer.last_name_kana %>
+          </span>
+
+          <span>
+            <%= @customer.first_name_kana %>
+          </span>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#CCFFFF">郵便番号</td>
+        <td><%= @customer.postal_code %></td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#CCFFFF">住所</td>
+        <td><%= @customer.address %></td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#CCFFFF">電話番号</td>
+        <td><%= @customer.telephone_number %></td>
+      </tr>
+
+      <tr>
+        <td bgcolor="#CCFFFF">メールアドレス</td>
+        <td><%= @customer.email %></td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!--装飾品-->
+  <div class="row mb-3">
+
+    <h5 class="col col-md-2 offset-md-1 text-center">
+      <strong>　　　装飾品</strong>
+    </h5>
+
+    <div class="col col-md-3">
+      <%= link_to "　一覧を見る　", decorations_path, class:"btn btn-primary btn-block" %>
+    </div>
+
+  </div>
+
+  <!--ランキング一覧-->
+  <div class="row mb-3">
+
+    <h5 class="col col-md-2 offset-md-1 text-center">
+      <strong>　ランキング一覧</strong>
+    </h5>
+
+    <div class="col col-md-3">
+      <%= link_to "　一覧を見る　", rankings_path, class:"btn btn-primary btn-block" %>
+    </div>
+
+  </div>
+
+</div>
