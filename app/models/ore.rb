@@ -14,6 +14,8 @@ class Ore < ApplicationRecord
      @ore = Ore.where("name LIKE?", "%#{word}%")
     else
      @ore = Ore.all
+     
+
     end
   end
 end

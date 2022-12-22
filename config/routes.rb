@@ -27,7 +27,7 @@ scope module: :public do
   patch 'customers/withdraw' => 'customers#withdraw'
 
   post 'rankings/confirm' => 'rankings#confirm'
-  get 'rankings/complete' => 'rankingss#complete'
+  get 'rankings/complete' => 'rankings#complete'
   resources :rankings, only: [:new,:create,:index,:show]
 
   resources :decorations, only: [:index,:edit,:create,:destroy,:update]

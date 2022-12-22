@@ -11,7 +11,7 @@
       <% genres.each do |genre| %>
         <tr class = "text-center">
           <td class = "text-secondary border-bottom border-dark h-50">
-            <%= link_to items_path(genre.id:genre.id), class: "text-dark" do %>
+            <%= link_to ores_path(genre_id: genre.id), class: "text-dark" do %>
               <%= genre.name %>
             <% end %>
           </td>

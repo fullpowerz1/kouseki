@@ -5,7 +5,9 @@
       <!--後々ジャンル検索を直す-->
 
     <div class="col-md-2">
-      <%= render 'admin/genres/search', genres: @genres %>
+      <% if customer_signed_in? %>
+        <%= render 'layouts/search', genres: @genres %>
+      <% end %>
     </div>
 
       <div class="mx-auto">

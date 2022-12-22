@@ -9,7 +9,7 @@ class Admin::OresController < ApplicationController
   end
 
   def create
-    @Ore = Ore.new(ore_params)
+    @ore = Ore.new(ore_params)
     @ore.save!
     redirect_to admin_ore_path(@ore.id)
   end
