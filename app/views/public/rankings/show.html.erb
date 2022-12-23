@@ -1,0 +1,69 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class="col mx-auto">
+      <h2 class="teo">ランキング詳細</h2>
+      <strong>ランキング情報</strong>
+
+      <table class="sora">
+
+        <tr>
+          <td class="atora">登録日</td>
+          <td>
+            <%= @ranking.created_at.strftime("%Y/%m/%d") %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="atora">装飾品</td>
+          <td>
+            <%= @ranking.type %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="atora">順位</td>
+          <td>
+            <%= @ranking.rank_i18n %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="atora">ステータス</td>
+          <td>
+            <%= @ranking.status_i18n %>
+          </td>
+        </tr>
+
+      </table>
+
+      <strong>ランキング鉱石</strong>
+
+      <table class="sora">
+
+        <thead class="atora">
+          <tr>
+            <th>鉱石名</th>
+            <th>数量</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @ranking.each do |ranking| %>
+
+            <tr>
+              <td>
+                <%= ranking.ore %>
+              </td>
+
+              <td>
+                <%= ranking.amount %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

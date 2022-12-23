@@ -48,7 +48,6 @@ class Public::RankingsController < ApplicationController
 
   def show
     @ranking = Ranking.find(params[:id])
-    @ranking_details = @ranking.ranking_details
   end
 
   private
