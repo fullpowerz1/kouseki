@@ -38,18 +38,31 @@
   <div class="row">
    <div class = "col-5">
 
+     <!--順位の説明-->
      <strong class="d-inline">順位</strong>
      <p class="d-inline">
         <%= @ranking.rank_i18n %>
      </p>
 
+     <!--ランキングの説明-->
      <strong class="d-inline">ランキング用鉱石</strong>
      <p class="d-inline">
-        <%= @ranking.rank_i18n %>
+        <%= @ranking.select_material_i18n %>
      </p>
 
    </div>
-  </div>
+
+  <!--情報確定ボタン-->
+  <%= form_with model: @ranking, url: rankings_path do |f| %>
+    <%= f.hidden_field :rank, :value => @ranking.rank %>
+    <%= f.hidden_field :select_material, :value => @ranking.select_material %>
+
+    <div class="col-7">
+     <%= f.submit '情報を確定する', class: "btn btn-success" %>
+    </div>
+  <% end %>
+
+ </div>
 
 
  </div>
