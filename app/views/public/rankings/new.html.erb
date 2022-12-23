@@ -33,10 +33,47 @@
           </div>
 
           <!--ランキング用鉱石-->
+          <div class="pt-4">
+
+            <h3>
+              <%= f.label :ore, "ランキング用鉱石" %>
+            </h3>
+
+            <!--手持ちの鉱石-->
+            <div class="ml-3">
+              <%= f.radio_button :select_material, 0, checked: "checked" %>
+              <%= f.label :ore, "手持ちの鉱石" %>
+              <br>
+              <%= current_customer.ore %>
+              <br>
+              <%= current_customer.amount %>
+            </div>
+
+            <!--装飾品-->
+            <div class="ml-3 mt-3">
+              <%= f.radio_button :select_material, 1 %>
+              <%= f.label :type, "装飾品" %>
+
+              <!--装飾品のフィールド-->
+              <div class="row">
+                <div class="col-4 mt-2">
+                  <%= f.text_field :postcode, placeholder: "ピアス", size: 40 %>
+                </div>
+              </div>
+
+            </div>
+
+            <!--確認画面ボタン-->
+            <div class="p-5 mb-5 text-center">
+              <%= f.submit '確認画面へ進む', class: "btn btn-primary" %>
+            </div>
+
+          </div>
 
         <% end %>
 
       </div>
+
     </div>
 
 </div>
