@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row-md">
+    <h1 class="teo">ジャンル編集</h1>
+  </div>
+
+  <!--ジャンル編集の登録フォーム-->
+  <div class="row-md">
+    <%= form_with model: @genre, url: admin_genre_path(@genre.id) do |f| %>
+      <div class="form-group row d-flex align-items-center">
+        <%= f.label :ジャンル名, class: 'col-md-3 offset-1 text-center lead' %>
+        <%= f.text_field :name, class: 'col-md-4' %>
+        <%= f.submit :"変更を保存", class: 'btn btn-success col-md-2 offset-1' %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
