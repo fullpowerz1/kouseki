@@ -1,6 +1,10 @@
   ja:
     enums:
       ranking:
+        status:
+          gold: "ゴールド"
+          silver: "シルバー"
+          bronze: "ブロンズ"
         rank:
           rank1: "1位"
           rank2: "2位"

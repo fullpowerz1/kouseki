@@ -73,12 +73,52 @@
       </div>
 
       <div class="col-md-10 text-left">
-
+        <%= f.select :status, Ranking.statuses.keys.map {|k| [I18n.t("enums.status.#{k}"), k]}, {}, {class: 'form-control seki'} %>
+        <%= f.submit '更新',class: "btn btn-success" %>
       </div>
-
 
     </div>
 
   <% end %>
+
+  <div class="m-md-2"><br></div>
+
+  <div class="row">
+    <div class="col-8">
+
+      <table class="table table-hover table-bordered">
+
+        <!--表の見出し-->
+        <thead class="text-white atora">
+          <tr>
+            <th>鉱石名</th>
+            <th>数量</th>
+            <th>順位</th>
+          </tr>
+        </thead>
+
+        <!--下の列3つ-->
+        <tbody class="god">
+          <% @ranking.each do |ranking| %>
+            <tr>
+              <td>
+               <%= ranking.ore %>
+              </td>
+
+              <td>
+                <%= ranking.amount %>
+              </td>
+
+              <td>
+                <%= ranking.rank %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
 
 </div>

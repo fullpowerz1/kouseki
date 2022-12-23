@@ -10,6 +10,7 @@ class Ranking < ApplicationRecord
     self.first_name + self.last_name
     end
 
+    enum status: { gold: 0, silver: 1, bronze: 2 }
     enum rank: { rank1: 0, rank2: 1, rank3: 2 }
 
 end
