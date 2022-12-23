@@ -5,10 +5,10 @@ class Admin::RankingsController < ApplicationController
   end
 
   def update
+    @ranking = Ranking.find(params[:id])
     if @ranking.update(ranking_params)
       redirect_to admin_ranking_path(@ranking)
     else
-      @ranking = Ranking.find(params[:id])
       render :show
     end
   end
