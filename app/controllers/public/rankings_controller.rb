@@ -1,5 +1,11 @@
 class Public::RankingsController < ApplicationController
 
+  def index
+    @rankings = current_customer.rankings
+    @ranking = Ranking.new
+  end
+
+
   def new
     @ranking = Ranking.new
     @current_customer = current_customer

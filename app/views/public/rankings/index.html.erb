@@ -1,0 +1,51 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class="col-md-8">
+      <h2>ランキング一覧</h2>
+
+      <table class="table table-bordered">
+
+        <thead class="seki">
+          <tr class="text-dark font-weight-bold">
+            <th>登録日時</th>
+            <th>装飾品</th>
+            <th>登録鉱石</th>
+            <th>順位</th>
+            <th>ランキング詳細</th>
+          </tr>
+        </thead>
+
+        <!--ランキングの繰り返し処理-->
+        <% @rankings.each do |ranking| %>
+          <tbody class="haku">
+            <tr>
+              <td>
+                <%= ranking.created_at.strftime('%Y/%m/%d') %>
+              </td>
+
+              <td>
+                <%= ranking.type %>
+              </td>
+
+              <td>
+                <%= ranking.ore %>
+              </td>
+
+              <td>
+                <%= ranking.rank_i18n %>
+              </td>
+
+              <td>
+                <%= link_to '表示する', class: 'btn btn-sm btn-info' %>
+              </td>
+
+            </tr>
+          </tbody>
+        <% end %>
+
+      </table>
+
+    </div>
+
+  </div>
+</div>
