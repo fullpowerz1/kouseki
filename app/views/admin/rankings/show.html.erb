@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="m-md-2"><br></div>
+  <!--タイトル-->
+  <div class="row">
+
+    <h4 class="col-md-2 mx-auto text-center teo">
+      <strong>ランキング情報</strong>
+    </h4>
+
+    <div class="col-md-8"></div>
+  </div>
+
+  <div class="m-md-2"><br></div>
+
+  <!--登録者-->
+  <div class="order row">
+
+    <div class="col-md-2 text-left">
+      <strong>登録者</strong>
+    </div>
+
+    <div class="col-md-10 text-left">
+      <%= link_to @ranking.customer.full_name, admin_customer_path(@ranking) %>
+    </div>
+
+  </div>
+
+  <!--登録日時-->
+  <div class="order row">
+
+    <div class="col-md-2 text-left">
+      <strong>登録日時</strong>
+    </div>
+
+    <div class="col-md-10 text-left">
+      <%= @ranking.created_at.strftime("%Y/%m/%d") %>
+    </div>
+
+  </div>
+
+  <!--装飾品-->
+  <div class="order row">
+
+    <div class="col-md-2 text-left">
+      <strong>装飾品</strong>
+    </div>
+
+    <div class="col-md-10 text-left">
+      <%= @ranking.type %>
+    </div>
+
+  </div>
+
+  <!--順位-->
+  <div class="order row">
+
+    <div class="col-md-2 text-left">
+      <strong>順位</strong>
+    </div>
+
+    <div class="col-md-10 text-left">
+      <%= @ranking.rank_i18n %>
+    </div>
+
+  </div>
+
+  <!--ランキングステータス更新ボタンなど-->
+  <%= form_with model: @ranking, url: admin_ranking_path(@ranking), method: :patch do |f| %>
+    <div class="order row">
+
+      <div class="col-md-2 text-left">
+        <strong>ランキングステータス</strong>
+      </div>
+
+      <div class="col-md-10 text-left">
+
+      </div>
+
+
+    </div>
+
+  <% end %>
+
+</div>
