@@ -1,0 +1,56 @@
+<div class="container">
+ <div class = "row">
+
+  <!--鉱石のテーブル-->
+  <div class="col-8">
+
+    <table class="sora">
+
+     <thead>
+      <tr>
+       <th class="madoka">鉱石名</th>
+       <th class="madoka">数量</th>
+      </tr>
+     </thead>
+
+    <tbody>
+
+     <% @ranking.each do |ranking| %>
+      <tr>
+
+       <td>
+         <%= ranking.ore.stone %>
+       </td>
+
+       <td>
+         <%= ranking.ore.amount %>
+       </td>
+
+      </tr>
+     <% end %>
+
+    </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="row">
+   <div class = "col-5">
+
+     <strong class="d-inline">順位</strong>
+     <p class="d-inline">
+        <%= @ranking.rank_i18n %>
+     </p>
+
+     <strong class="d-inline">ランキング用鉱石</strong>
+     <p class="d-inline">
+        <%= @ranking.rank_i18n %>
+     </p>
+
+   </div>
+  </div>
+
+
+ </div>
+</div>

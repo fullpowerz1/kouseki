@@ -10,5 +10,5 @@ class Public::OresController < ApplicationController
     @ore = Ore.find(params[:id])
     @current_customer = current_customer
   end
-
+  
 end
