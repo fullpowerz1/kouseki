@@ -15,8 +15,14 @@ class Customer < ApplicationRecord
   validates :address, presence: true
   validates :telephone_number, presence: true
 
+  #名前をフルネームで記述できるように
   def full_name
     self.last_name + "" + self.first_name
+  end
+
+  #名前かなをフルネームで記述できるように
+  def full_name_kana
+    last_name_kana + first_name_kana
   end
 
   def self.guest

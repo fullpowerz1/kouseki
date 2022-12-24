@@ -1,0 +1,114 @@
+<div class="container">
+
+  <h1 class="teo pt-4">
+    <%= @customer.full_name %>さんの
+    <strong>会員詳細</strong>
+  </h1>
+
+  <!--会員のテーブル-->
+  <div class='row'>
+    <div class='col-md-8 offset-md-1'>
+      <table class="table table-bordered border-dark">
+
+        <thead>
+          <tr>
+            <th class="atora text-white">
+              会員ID
+            </th>
+
+            <td class="haku">
+              <%= @customer.id %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              氏名
+            </th>
+
+            <td class="haku">
+              <%= @customer.full_name %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              フリガナ
+            </th>
+
+            <td class="haku">
+              <%= @customer.full_name_kana %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              郵便番号
+            </th>
+
+            <td class="haku">
+              <%= @customer.postal_code %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              住所
+            </th>
+
+            <td class="haku">
+              <%= @customer.address %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              電話番号
+            </th>
+
+            <td class="haku">
+              <%= @customer.telephone_number %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              メールアドレス
+            </th>
+
+            <td class="haku">
+              <%= @customer.email %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="atora text-white">
+              会員ステータス
+            </th>
+
+            <td class="haku">
+              <% if @customer.is_deleted == false %>
+                <strong class="text-success">有効</strong>
+              <% else %>
+                <strong class="text-secondary">退会</strong>
+              <% end %>
+            </td>
+          </tr>
+
+          <tr>
+            <th></th>
+            <td>
+              <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: 'btn btn-success' %>
+            </td>
+
+            <td>
+              <%= link_to "ランキング情報を見る", admin_ranking_path(@ranking.id), class: 'btn btn-primary' %>
+            </td>
+          </tr>
+        </thead>
+
+      </table>
+    </div>
+  </div>
+
+</div>
