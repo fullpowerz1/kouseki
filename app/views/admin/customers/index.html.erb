@@ -1,0 +1,52 @@
+<div class="container">
+
+  <h1 class="pt-4 teo">会員一覧</h3>
+
+  <!--会員のテーブル-->
+  <div class="row">
+    <div class="col-md-8 offset-md-1 pt-4">
+      <table class='table table-bordered border-dark text-center'>
+
+        <thead class="seki text-white">
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+
+        <!--繰り返し処理-->
+        <% @customers.each do |customer| %>
+          <tbody class="haku">
+            <tr>
+              <td>
+                <%= customer.id %>
+              </td>
+
+              <td>
+                <%= link_to customer.full_name , admin_customer_path(customer.id) %>
+              </td>
+
+              <td>
+                <%= customer.email %>
+              </td>
+
+              <% if customer.is_deleted == false %>
+                <td class="text-success font-weight-bold">
+                  有効
+                </td>
+              <% else %>
+                <td class="text-secondary font-weight-bold">
+                  退会
+                </td>
+              <% end %>
+            </tr>
+          </tbody>
+        <% end %>
+
+      </table>
+    </div>
+  </div>
+
+</div>
