@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1 class="teo pt-4">
+    <%= @customer.full_name %>さんの
+    <strong>会員情報編集</strong>
+  </h1>
+
+  <div class="row">
+
+  </div>
+
+  <!--会員情報編集のテーブル-->
+  <div class='row'>
+    <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
+      <table class="table table-bordered border-dark haku">
+        <tr class="form-group">
+
+        </tr>
+      </table>
+    <% end %>
+  </div>
+
+
+</div>
