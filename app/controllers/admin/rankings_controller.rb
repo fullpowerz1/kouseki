@@ -7,10 +7,9 @@ class Admin::RankingsController < ApplicationController
   def update
     @ranking = Ranking.find(params[:id])
     if @ranking.update(ranking_params)
-      redirect_to admin_ranking_path(@ranking)
-    else
-      render :show
+      @ranking.update_all(rank: 2) if @ranking.rank == "rank3"
     end
+      redirect_to admin_ranking_path(@ranking)
   end
 
   private

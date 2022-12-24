@@ -1,6 +1,7 @@
 class Ranking < ApplicationRecord
      belongs_to :customer
      belongs_to :ore
+
     def set_date
       created_at.strftime("%Y/%m/%d %H:%M:%S")
     end
