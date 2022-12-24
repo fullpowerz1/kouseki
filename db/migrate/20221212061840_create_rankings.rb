@@ -3,7 +3,7 @@ class CreateRankings < ActiveRecord::Migration[6.1]
     create_table :rankings do |t|
       t.integer :customer_id,          null: false, default: ""
       t.string :ore,                   null: false, default: ""
-      t.string :type,                  null: false, default: ""
+      t.string :amulet,                  null: false, default: ""
       t.string :name,                  null: false, default: ""
       t.integer :amount,               null: false, default: ""
       t.integer :rank,                 null: false, default: ""

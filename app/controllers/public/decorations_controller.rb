@@ -40,7 +40,7 @@ class Public::DecorationsController < ApplicationController
   private
 
   def decoration_params
-    params.require(:decoration).permit(:customer_id, :ore, :type, :nickname)
+    params.require(:decoration).permit(:customer_id, :ore, :amulet, :nickname)
   end
 
 

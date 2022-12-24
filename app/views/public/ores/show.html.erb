@@ -16,16 +16,13 @@
 
       <!--今回hiddenは付かない。-->
       <% if customer_signed_in? %>
-        <%= form_with model: @ranking, url: new_ranking_path do |f| %>
+        <%= form_with model: @ranking, url: new_ranking_path, method: :get do |f| %>
 
         <div class= 'container-fluid'>
           <div class="row">
 
-            <!--セレクトボックス-->
-            <div class="col-md-2">
-              <%= f.select :amount, *[1..10], {include_blank: "個数選択"} %>
-            </div>
-
+            <!--hidden_field-->
+              <%= f.hidden_field :ore_id, value: @ore.id %>
             <!--ランキング入力ボタン-->
             <div class="col-md-3">
               <%= f.submit 'ランキングへ移動', class: "btn btn-success" %>

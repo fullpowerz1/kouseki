@@ -44,25 +44,40 @@
               <%= f.radio_button :select_material, 0, checked: "checked" %>
               <%= f.label :ore, "手持ちの鉱石" %>
               <br>
-              <%= current_customer.ore %>
+              <%# @rankings.each do |ranking| %>
+                <%#= ranking.ore %>
               <br>
-              <%= current_customer.amount %>
+                <%#= ranking.amount %>
+              <%# end %>
+              <% if @ore.present? %><br>
+                <%= @ore.stone %>
+              <div class="col-md-2">
+                <%= f.select :amount, *[1..10], {include_blank: "個数選択"} %>
+              </div>
+              <% end %>
             </div>
 
             <!--装飾品-->
-            <div class="ml-3 mt-3">
-              <%= f.radio_button :select_material, 1 %>
-              <%= f.label :type, "装飾品" %>
+            <!--<div class="ml-3 mt-3">-->
+              <%#= f.radio_button :select_material, 1 %>
+              <%#= f.label :type, "装飾品" %>
 
               <!--装飾品のフィールド-->
-              <div class="row">
-                <div class="col-4 mt-2">
-                  <%= f.text_field :postcode, placeholder: "ピアス", size: 40 %>
-                </div>
-              </div>
+            <!--  <div class="row">-->
+            <!--    <div class="col-4 mt-2">-->
+                  <%#= f.text_field :postcode, placeholder: "ピアス", size: 40 %>
+            <!--    </div>-->
+            <!--  </div>-->
 
-            </div>
+            <!--</div>-->
 
+          <!--@oreが無い時に-->
+          <% if @ore.present? %>
+            <%= f.hidden_field :ore, value: @ore.stone %>
+          <% end %>
+            <%= f.hidden_field :amulet, value: 0 %>
+            <%= f.hidden_field :name, value: current_customer.last_name %>
+            <%= f.hidden_field :status, value: "dame" %>
             <!--確認画面ボタン-->
             <div class="p-5 mb-5 text-center">
               <%= f.submit '確認画面へ進む', class: "btn btn-primary" %>

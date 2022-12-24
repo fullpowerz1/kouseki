@@ -16,6 +16,6 @@ class Admin::RankingsController < ApplicationController
   private
 
   def ranking_params
-    params.require(:ranking).permit(:customer_id, :ore, :type, :name, :amount, :rank, :status)
+    params.require(:ranking).permit(:customer_id, :ore, :amulet, :name, :amount, :rank, :status)
   end
 end

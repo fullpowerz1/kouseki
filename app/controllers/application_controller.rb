@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 # イン・アウト後の遷移記述
  private
   def after_sign_in_path_for(resource_or_scope)
-    if resource_or_scope.is_a?(Admin)
-        admins_ores_top_path
+    if resource_or_scope == :admin
+        admin_ores_path
     else
         root_path
     end

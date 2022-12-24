@@ -1,5 +1,5 @@
 class Ore < ApplicationRecord
-    has_many :ranking_details, dependent: :destroy
+    has_many :rankings, dependent: :destroy
     belongs_to :genre
     has_one_attached :image
 
@@ -14,7 +14,7 @@ class Ore < ApplicationRecord
      @ore = Ore.where("name LIKE?", "%#{word}%")
     else
      @ore = Ore.all
-     
+
 
     end
   end
