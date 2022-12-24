@@ -13,12 +13,99 @@
   <div class='row'>
     <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
       <table class="table table-bordered border-dark haku">
-        <tr class="form-group">
 
+        <tr class="form-group">
+          <th class="atora text-white">会員ID</th>
+          <td class="text-center">
+            <%= @customer.id %>
+          </td>
         </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"氏名"%>
+          </th>
+
+          <td>
+            <%= f.text_field :last_name, autofocus: true, placeholder:"令和" %>
+          </td>
+
+          <td>
+            <%= f.text_field :first_name, placeholder:"道子" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"フリガナ"%>
+          </th>
+
+          <td>
+            <%= f.text_field :last_name_kana, placeholder:"レイワ" %>
+          </td>
+
+          <td>
+            <%= f.text_field :first_name_kana, placeholder:"ミチコ" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"郵便番号"%>
+          </th>
+
+          <td>
+            <%= f.text_field :postal_code, placeholder:"0000000" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"住所"%>
+          </th>
+
+          <td>
+            <%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"電話番号"%>
+          </th>
+
+          <td>
+            <%= f.text_field :telephone_number, placeholder:"0000000000" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"メールアドレス"%>
+          </th>
+
+          <td>
+            <%= f.email_field :email, placeholder:"sample@example.com" %>
+          </td>
+        </tr>
+
+        <tr class="form-group">
+          <th class="atora text-white">
+            <%= f.label :"会員ステータス"%>
+          </th>
+
+          <td>
+            <%= f.radio_button :is_deleted, :false %>
+              <%= f.label :is_deleted, "有効" %>
+            <%= f.radio_button :is_deleted, :true %>
+              <%= f.label :is_deleted, "退会" %>
+          </td>
+        </tr>
+
       </table>
+
+      <%= f.submit '変更を保存', class:'btn btn-success' %>
     <% end %>
   </div>
-
 
 </div>
