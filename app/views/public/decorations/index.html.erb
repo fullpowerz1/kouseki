@@ -1,0 +1,72 @@
+<div class="container">
+
+  <div class="row mb-5">
+    <h2 class="col col-md-2 offset-md-2 text-center mt-3 teo">
+      <strong>装飾品登録/一覧</strong>
+    </h2>
+  </div>
+
+  <!--装飾品一覧の登録フォーム-->
+    <div class="col-md-7">
+      <%= form_with model: @decoration, url: decorations_path, local:true do |f| %>
+        <div class="form-group row">
+          <%= f.label "鉱石名" %>
+          <%= f.text_field :ore, placeholder: "ダイヤモンド", class: 'ml-3' %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label "種類" %>
+          <%= f.text_field :type, placeholder: "ピアス", class: 'col-md-8 ml-5' %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label "ニックネーム" %>
+          <%= f.text_field :nickname, placeholder: "ピカリ", class: 'ml-5' %>
+        </div>
+
+        <div class="form-group text-right">
+          <%= f.submit "新規登録", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+
+    <!--装飾品のテーブル-->
+    <div class="table-responsive mt-5 suiheisen">
+      <table class="table table-bordered border-border-dark">
+
+        <thead class="domon">
+          <tr>
+            <th>鉱石名</th>
+            <th>種類</th>
+            <th>ニックネーム</th>
+            <th colspan="5"></th>
+          </tr>
+        </thead>
+
+        <tbody class="haku">
+          <% @decorations.each do |decoration| %>
+            <tr class="text-center">
+              <td>
+                <%= decoration.ore %>
+              </td>
+
+              <td>
+                <%= decoration.type %>
+              </td>
+
+              <td>
+                <%= decoration.nickname %>
+              </td>
+
+              <td>
+                <%= link_to "編集する", edit_decoration_path(decoration), class: 'btn btn-sm btn-success' %>
+                <%= link_to "削除する", decoration_path(decoration), class: 'btn btn-sm btn-danger', method: :delete, "data-confirm" => "本当に削除しますか？" %>
+              </td>
+            </tr>
+          <% end %>
+        </tboy>
+
+      </table>
+    </div>
+
+</div>
