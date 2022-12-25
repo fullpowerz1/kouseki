@@ -1,5 +1,5 @@
 <!--パスの設定とルーティングの書き方が分かりません。-->
-<%= form_with url: root_path, method: :get, local: true do |f| %>
-  <%= f.text_field :q, placeholder: "気になるワードを入力", value: "" %>
+<%= search_form_for @search, url: ores_path do |f| %>
+  <%= f.text_field :stone_cont, placeholder: "気になるワードを入力", value: "" %>
   <%= f.submit "検索", name: nil %>
 <% end %>

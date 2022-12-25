@@ -1,0 +1,2 @@
+class OreComment < ApplicationRecord
+end

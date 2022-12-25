@@ -1,5 +1,7 @@
 class Ore < ApplicationRecord
     has_many :rankings, dependent: :destroy
+    has_many :tagmaps, dependent: :destroy
+    has_many :tags, through: :tagmaps
     belongs_to :genre
     has_one_attached :image
 

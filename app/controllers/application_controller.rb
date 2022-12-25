@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
  private
 
  def set_search
-   @query ={ title_or_content_cont: params[:q] }
-   @search = Jewelry.ransack(@query)
+   #@query ={ title_or_content_cont: params[:q] }
+   #@search = Ore.ransack(@query)
+   @search = Ore.ransack(params[:q])
    @search_jewelries = @search.result.order(created_at: :desc).page(params[:page])
  end
 

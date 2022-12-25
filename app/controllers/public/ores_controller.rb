@@ -3,6 +3,10 @@ class Public::OresController < ApplicationController
     # ページネーション
     @ores = Ore.page(params[:page]).per(8).order('created_at DESC')
     @genres = Genre.all
+
+  end
+
+  def edit
   end
 
   def show
@@ -10,5 +14,5 @@ class Public::OresController < ApplicationController
     @ore = Ore.find(params[:id])
     @current_customer = current_customer
   end
-  
+
 end

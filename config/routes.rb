@@ -18,7 +18,7 @@ scope module: :public do
   root :to =>"homes#top"
   get "about"=>"homes#about"
 
-  resources :ores, only: [:index,:show]
+  resources :ores, only: [:index,:show,:edit]
 
   get 'customers/my_page' =>"customers#show"
   get 'customers/information/edit' => 'customers#edit'
