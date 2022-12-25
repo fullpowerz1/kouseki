@@ -1,6 +1,8 @@
 class Public::CustomersController < ApplicationController
+
    def show
      @customer = current_customer
+     @customers = @q.result(distinct: true)
    end
 
    def edit

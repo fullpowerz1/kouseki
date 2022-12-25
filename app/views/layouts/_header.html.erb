@@ -74,6 +74,10 @@
           </div>
       <% end %>
 
+      <% unless admin_signed_in? %>
+        <%= render "layouts/searcher", { search: @search } %>
+      <% end %>
+
     </div>
   </div>
 </header>
