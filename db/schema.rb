@@ -115,7 +115,8 @@ ActiveRecord::Schema.define(version: 2022_12_25_032536) do
 
   create_table "rankings", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.string "ore", default: "", null: false
+    t.integer "ore_id", null: false
+    t.string "stone", default: "", null: false
     t.string "amulet", default: "", null: false
     t.string "name", default: "", null: false
     t.integer "amount", null: false
