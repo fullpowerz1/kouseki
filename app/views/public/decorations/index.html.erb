@@ -9,6 +9,7 @@
   <!--装飾品一覧の登録フォーム-->
     <div class="col-md-7">
       <%= form_with model: @decoration, url: decorations_path, local:true do |f| %>
+        <%= f.hidden_field :customer_id, :value => @current_customer.id %>
         <div class="form-group row">
           <%= f.label "鉱石名" %>
           <%= f.text_field :ore, placeholder: "ダイヤモンド", class: 'ml-3' %>

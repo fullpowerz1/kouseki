@@ -2,6 +2,7 @@ class Public::RankingsController < ApplicationController
 
   def index
     @rankings = current_customer.rankings
+    @ranking = Ranking.new
   end
 
 
