@@ -2,7 +2,7 @@ class Public::CustomersController < ApplicationController
 
    def show
      @customer = current_customer
-     @customers = @q.result(distinct: true)
+     @customers = Customer.all.uniq
    end
 
    def edit

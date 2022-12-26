@@ -15,19 +15,19 @@
 
     <tbody>
 
-     <% @ranking.each do |ranking| %>
+     <%# @ranking.each do |ranking| %>
       <tr>
 
        <td>
-         <%= ranking.ore.stone %>
+         <%= @ranking.ore %>
        </td>
 
        <td>
-         <%= ranking.ore.amount %>
+         <%= @ranking.amount %>
        </td>
 
       </tr>
-     <% end %>
+     <%# end %>
 
     </tbody>
 
@@ -47,7 +47,7 @@
      <!--ランキングの説明-->
      <strong class="d-inline">ランキング用鉱石</strong>
      <p class="d-inline">
-        <%= @ranking.select_material_i18n %>
+        <%#= @ranking.select_material_i18n %>
      </p>
 
    </div>
@@ -55,7 +55,7 @@
   <!--情報確定ボタン-->
   <%= form_with model: @ranking, url: rankings_path do |f| %>
     <%= f.hidden_field :rank, :value => @ranking.rank %>
-    <%= f.hidden_field :ore_id, value: @ore.id %>
+    <%#= f.hidden_field :ore_id, value: @ore.id %>
 
     <div class="col-7">
      <%= f.submit '情報を確定する', class: "btn btn-success" %>
