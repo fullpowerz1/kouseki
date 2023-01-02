@@ -17,6 +17,9 @@ class Ore < ApplicationRecord
      @ore = Ore.where("name LIKE?", "%#{word}%")
     else
      @ore = Ore.all
+    end
+  end
+
 
   # ↓ここからタグ検索用のメソッド
   def self.ores_search(search)
@@ -24,11 +27,20 @@ class Ore < ApplicationRecord
   end
 
   def save_ores(tags)
-   current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
-   old_tags = current_tags - tags
-   new_tags = tags - current_tags
-  end
+    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
+    old_tags = current_tags - tags
+    new_tags = tags - current_tags
 
+    # destroy
+    old_tags.each do |old_name|
+    self.tags.delete Tag.find_by(tag_name:old_name)
+    end
+
+    # create
+    new_tags.each do |new_name|
+    ore_tag = Tag.find_or_create_by(tag_name:new_name)
+    self.tags << ore_tag
     end
   end
+
 end
