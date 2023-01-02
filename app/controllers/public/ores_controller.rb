@@ -18,10 +18,32 @@ class Public::OresController < ApplicationController
   def edit
   end
 
+  def create
+    @ore = Ore.new(ore_params)
+    tag_list = params[:ore][:tag_name].split(nil)
+    @ore.image.attach(params[:ore][:image])
+    @ore.customer_id = current_customer.id
+    if @ore.save
+       @ore.save_ores(tag_list)
+       redirect_to ores_path
+    else
+      @genres = Genre.all
+      @ore = Ore.find(params[:id])
+      @current_customer = current_customer
+      flash.now[:alert] = '投稿に失敗しました。'
+      render 'show'
+    end
+  end
+
   def show
     @genres = Genre.all
     @ore = Ore.find(params[:id])
     @current_customer = current_customer
   end
 
+  private
+
+  def ore_params
+    params.require(:ore).permit(:genre_id, :stone, :introduction, :is_deleted, :image, :tag_name)
+  end
 end
