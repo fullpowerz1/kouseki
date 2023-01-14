@@ -23,8 +23,8 @@ ransackの結果<br/>
         </div>
       </div>
 ------------------<br/>
-        
-        
+
+
       <h3 class="d-inline">鉱石一覧</h3>
       <h5 class="d-inline">(全<%= @ores.count %>件)</h5>
 
@@ -44,11 +44,22 @@ ransackの結果<br/>
           <% end %>
         </div>
 
+      <!--ページの下飾り-->
       <div class="row">
+        <!--ページネーション-->
         <div class='col-md-12'>
           <%= paginate @ores %>
         </div>
+
+        <!--タグ検索機能-->
+        <div class='col-md-12'>
+          <%= form_with model: [@tag,@ore], local: true do|f| %>
+            <%= link_to tag.tag_name, ores_path %>
+          <% end %>
+        </div>
+
       </div>
+      <!--ここまで下飾り-->
 
     </div>
 
