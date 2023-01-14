@@ -53,9 +53,13 @@ ransackの結果<br/>
 
         <!--タグ検索機能-->
         <div class='col-md-12'>
-          <%= form_with model: [@tag,@ore], local: true do|f| %>
+          <%#= form_with model: [@tag,@ores], local: true do|f| %>
+
+          <% @tag_lists.each do |tag| %>
             <%= link_to tag.tag_name, ores_path %>
           <% end %>
+
+          <%# end %>
         </div>
 
       </div>
