@@ -10,8 +10,13 @@ class Admin::OresController < ApplicationController
 
   def create
     @ore = Ore.new(ore_params)
-    @ore.save!
-    redirect_to admin_ore_path(@ore.id)
+    tag_list = params[:ore][:stone].split(',')
+    if @ore.save!
+       @ore.save_ores(tag_list)
+       redirect_to admin_ores_path,notice:'投稿完了しました:)'
+    else
+       redirect_to admin_ore_path(@ore.id)
+    end
   end
 
   def show
