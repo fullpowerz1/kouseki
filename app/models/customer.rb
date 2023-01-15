@@ -6,6 +6,7 @@ class Customer < ApplicationRecord
 
     has_many :rankings, dependent: :destroy
     has_many :decorations, dependent: :destroy
+    has_many :stone_comments, dependent: :destroy
 
   validates :last_name, presence: true
   validates :first_name, presence: true

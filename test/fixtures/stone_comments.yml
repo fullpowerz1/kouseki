@@ -3,9 +3,9 @@
 one:
   comment: MyText
   customer_id: 1
-  ore_id: MyString
+  ranking_id: 1
 
 two:
   comment: MyText
   customer_id: 1
-  ore_id: MyString
+  ranking_id: 1

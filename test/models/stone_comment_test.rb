@@ -1,6 +1,6 @@
 require "test_helper"
 
-class OreCommentTest < ActiveSupport::TestCase
+class StoneCommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
