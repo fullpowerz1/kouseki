@@ -55,6 +55,7 @@ class Public::RankingsController < ApplicationController
 
   def show
     @ranking = Ranking.find(params[:id])
+    @stone_comment = StoneComment.new
   end
 
   private

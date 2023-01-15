@@ -28,7 +28,11 @@ scope module: :public do
 
   post 'rankings/confirm' => 'rankings#confirm'
   get 'rankings/complete' => 'rankings#complete'
-  resources :rankings, only: [:new,:create,:index,:show]
+
+
+  resources :rankings, only: [:new,:create,:index,:show] do
+    resources :stone_comments, only: [:create, :destroy]
+  end
 
   resources :decorations, only: [:index,:edit,:create,:destroy,:update]
 end
