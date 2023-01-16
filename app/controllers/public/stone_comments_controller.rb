@@ -17,10 +17,14 @@ class Public::StoneCommentsController < ApplicationController
 
   def destroy
     @stone_comment = StoneComment.find(params[:id])
-    if @stone_comment.customer == current_customer
+    if @stone_comment.customer == current_customer || admin_signed_in?
       StoneComment.find(params[:id]).destroy
       @ranking = Ranking.find(params[:ranking_id])
-      redirect_to rankings_path
+      if admin_signed_in?
+        redirect_to admin_path
+      else
+        redirect_to rankings_path
+      end
     end
   end
 

@@ -99,26 +99,54 @@
 
         <!--下の列3つ-->
         <tbody class="god">
-          <% @ranking.each do |ranking| %>
+
             <tr>
               <td>
-               <%= ranking.ore %>
+               <%= @ranking.ore %>
               </td>
 
               <td>
-                <%= ranking.amount %>
+                <%= @ranking.amount %>
               </td>
 
               <td>
-                <%= ranking.rank %>
+                <%= @ranking.rank %>
               </td>
             </tr>
-          <% end %>
         </tbody>
 
       </table>
 
     </div>
+
+    <% if @ranking.stone_comments.present? %>
+
+  <!--コメント投稿後の繰り返し処理-->
+  <% @ranking.stone_comments.each do |stone_comment| %>
+    <tr>
+      <td>
+        <%= image_tag stone_comment.customer.get_image(100,100) %>
+      </td>
+
+      <td>
+        <%= stone_comment.customer.last_name %>
+        <%= stone_comment.customer.first_name %>
+      </td>
+
+      <td>
+        <%= stone_comment.created_at.strftime('%Y/%m/%d') %>
+        <%= stone_comment.comment %>
+      </td>
+
+        <td>
+          <%= link_to "destroy", ranking_stone_comment_path(stone_comment.ranking, stone_comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+        </td>
+
+    </tr>
+  <% end %>
+
+<% end %>
+
   </div>
 
 </div>

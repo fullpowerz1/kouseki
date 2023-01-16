@@ -27,6 +27,17 @@ class Customer < ApplicationRecord
     last_name_kana + first_name_kana
   end
 
+  # ユーザー用の画像を表示できるように
+  def get_image(width, height)
+    image.attached?
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/koubutuuser.jpg')
+      image.attach(io: File.open(file_path),filename: 'gensekitati', content_type: 'image/jpeg')
+    end
+      image.variant(resize_to_limit: [width, height]).processed
+  end
+
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |customer|
       customer.password = SecureRandom.urlsafe_base64
