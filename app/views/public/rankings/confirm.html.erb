@@ -55,7 +55,8 @@
   <!--情報確定ボタン-->
   <%= form_with model: @ranking, url: rankings_path do |f| %>
     <%= f.hidden_field :rank, :value => @ranking.rank %>
-    <%#= f.hidden_field :ore_id, value: @ore.id %>
+    <%= f.hidden_field :ore_id, value: @ore.id %>
+    <%= f.hidden_field :amount, value: @ranking.amount %>
 
     <div class="col-7">
      <%= f.submit '情報を確定する', class: "btn btn-success" %>

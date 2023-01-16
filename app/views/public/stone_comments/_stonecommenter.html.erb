@@ -16,7 +16,7 @@
         <%= stone_comment.comment %>
       </td>
 
-      <%= if stone_comment.customer == current_customer %>
+      <% if stone_comment.customer == current_customer %>
         <td>
           <%= link_to "destroy", ranking_stone_comment_path(stone_comment.ranking, stone_comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
         </td>

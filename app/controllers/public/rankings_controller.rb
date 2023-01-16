@@ -15,9 +15,11 @@ class Public::RankingsController < ApplicationController
 
   def confirm
     @ranking = Ranking.new(ranking_params)
+    #byebug
     # @ranking.rank = params[:ranking][:rank] #newの所で渡しているからいらない。
     @ranking.customer_id = current_customer.id
-    @ranking.amount = 1
+    #@ranking.amount = 1
+    @ore = Ore.find(ranking_params[:ore_id])
     # if @ranking.save!
      #  redirect_to rankings_complete_path
     # 手持ちの鉱石から選択
@@ -47,6 +49,7 @@ class Public::RankingsController < ApplicationController
 
   def create
     @ranking = Ranking.new(ranking_params)
+    #byebug
     @ranking.customer_id = current_customer.id
     @ranking.save!
     redirect_to rankings_complete_path
@@ -55,6 +58,7 @@ class Public::RankingsController < ApplicationController
 
   def show
     @ranking = Ranking.find(params[:id])
+    #byebug
     @stone_comment = StoneComment.new
   end
 

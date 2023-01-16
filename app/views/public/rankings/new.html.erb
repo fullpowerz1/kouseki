@@ -73,7 +73,8 @@
 
           <!--@oreが無い時に-->
           <% if @ore.present? %>
-            <%= f.hidden_field :ore, value: @ore.stone %>
+            <%= f.hidden_field :stone, value: @ore.stone %>
+            <%= f.hidden_field :ore_id, value: @ore.id %>
           <% end %>
             <%= f.hidden_field :amulet, value: 0 %>
             <%= f.hidden_field :name, value: current_customer.last_name %>

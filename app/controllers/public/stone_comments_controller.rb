@@ -1,4 +1,4 @@
-class StoneCommentsController < ApplicationController
+class Public::StoneCommentsController < ApplicationController
 
   def create
     @ranking = Ranking.find(params[:ranking_id])
