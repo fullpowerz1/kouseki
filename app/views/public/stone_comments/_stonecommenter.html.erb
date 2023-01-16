@@ -1,0 +1,28 @@
+<% if ranking.stone_comments.present? %>
+
+  <!--コメント投稿後の繰り返し処理-->
+  <% ranking.stone_comments.each do |stone_comment| %>
+    <tr>
+      <td>
+        <%= image_tag stone_comment.customer.get_image(100,100) %>
+      </td>
+
+      <td>
+        <%= stone_comment.customer.name %>
+      </td>
+
+      <td>
+        <%= stone_comment.created_at.strftime('%Y/%m/%d') %>
+        <%= stone_comment.comment %>
+      </td>
+
+      <%= if stone_comment.customer == current_customer %>
+        <td>
+          <%= link_to "destroy", ranking_stone_comment_path(stone_comment.ranking, stone_comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+        </td>
+      <% end %>
+
+    </tr>
+  <% end %>
+
+<% end %>

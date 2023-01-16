@@ -3,7 +3,6 @@ class Ranking < ApplicationRecord
      belongs_to :customer
      belongs_to :ore
      has_many :stone_comments, dependent: :destroy
-     has_one_attached :image
 
     def set_date
       created_at.strftime("%Y/%m/%d %H:%M:%S")

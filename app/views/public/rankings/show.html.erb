@@ -1,5 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
+    <!--コメント以外のテーブル-->
     <div class="col mx-auto">
       <h2 class="teo">ランキング詳細</h2>
       <strong>ランキング情報</strong>
@@ -65,5 +66,18 @@
       </table>
 
     </div>
+
+    <!--コメント用のテーブル-->
+    <div class='col-3 offset-1'>
+      <table id="comments_area">
+        <%= render 'stone_comments/stonecommenter', ranking: @ranking, stonecomment: @stone_comment %>
+      </table>
+
+      <div class="new-comment">
+        <%= render 'stone_comments/stoneform', ranking: @ranking %>
+      </div>
+
+    </div>
+
   </div>
 </div>
