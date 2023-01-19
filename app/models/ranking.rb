@@ -11,7 +11,7 @@ class Ranking < ApplicationRecord
 
     # favoritesテーブル内に存在するか調べるメソッド
     def favorited_by?(customer)
-      favorites.exist?(customer_id: customer.id)
+      favorites.exists?(customer_id: customer.id)
     end
 
     def full_name

@@ -8,7 +8,7 @@ class Public::FavoritesController < ApplicationController
 
   def destroy
     @ranking = Ranking.find(params[:ranking_id])
-    favorite = current_customer.favirutes.find_by(ranking_id: @ranking.id)
+    favorite = current_customer.favorites.find_by(ranking_id: @ranking.id)
     favorite.destroy
   end
 

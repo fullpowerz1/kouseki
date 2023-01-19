@@ -2,9 +2,14 @@ class Public::RankingsController < ApplicationController
 
   def index
     @rankings = current_customer.rankings
+    # @rankings = @rankings.filter { |ranking| ranking.favorites.present? }
     @ranking = Ranking.new
   end
 
+  def bookmark
+    @rankings = current_customer.rankings
+    @rankings = @rankings.filter { |ranking| ranking.favorites.present? }
+  end
 
   def new
     @rankings = current_customer.rankings
