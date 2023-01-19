@@ -3,9 +3,15 @@ class Ranking < ApplicationRecord
      belongs_to :customer
      belongs_to :ore
      has_many :stone_comments, dependent: :destroy
+     has_many :favorites, dependent: :destroy
 
     def set_date
       created_at.strftime("%Y/%m/%d %H:%M:%S")
+    end
+
+    # favoritesテーブル内に存在するか調べるメソッド
+    def favorited_by?(customer)
+      favorites.exist?(customer_id: customer.id)
     end
 
     def full_name

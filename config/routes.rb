@@ -31,6 +31,7 @@ scope module: :public do
 
 
   resources :rankings, only: [:new,:create,:index,:show] do
+    resource :favorites, only: [:create, :destroy]
     resources :stone_comments, only: [:create, :destroy]
   end
 

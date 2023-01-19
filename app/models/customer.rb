@@ -7,6 +7,7 @@ class Customer < ApplicationRecord
     has_many :rankings, dependent: :destroy
     has_many :decorations, dependent: :destroy
     has_many :stone_comments, dependent: :destroy
+    has_many :favorites, dependent: :destroy
     has_one_attached :image
 
   validates :last_name, presence: true
