@@ -2,7 +2,7 @@
  <div class="m-md-2"><br></div>
  <div class="row">
 
-     <h4 class="col-md-2 mx-auto text-center teo">
+     <h4 class="col-md-2 mx-auto text-center teo pikari">
          <strong>鉱石詳細</strong>
      </h4>
 
@@ -23,34 +23,28 @@
                 <tbody>
 
                     <tr>
-                        <td class="text-white font-weight-bold atora">鉱石名</td>
+                        <td class="text-white font-weight-bold atora doyon">鉱石名</td>
                         <!--半角スペース3つ-->
                         <td>&nbsp;&nbsp;&nbsp;</td>
                         <td class="haku"><%= @ore.stone %></td>
                     </tr>
 
-                    <td class="m-md-1"><br></td>
-
                     <tr>
-                        <td class="text-white font-weight-bold atora">鉱石説明</td>
+                        <td class="text-white font-weight-bold atora doyon">鉱石説明</td>
                         <!--半角スペース3つ-->
                         <td>&nbsp;&nbsp;&nbsp;</td>
                         <td class="haku"><%= @ore.introduction %></td>
                     </tr>
 
-                    <td class="m-md-1"><br></td>
-
                     <tr>
-                        <td class="text-white font-weight-bold atora">ジャンル</td>
+                        <td class="text-white font-weight-bold atora doyon">ジャンル</td>
                         <!--半角スペース3つ-->
                         <td>&nbsp;&nbsp;&nbsp;</td>
                         <td class="haku"><%= @ore.genre.name %></td>
                     </tr>
 
-                    <td class="m-md-1"><br></td>
-
                     <tr>
-                        <td class="text-white font-weight-bold atora">鉱石ステータス</td>
+                        <td class="text-white font-weight-bold atora doyon">鉱石ステータス</td>
                         <!--半角スペース3つ-->
                         <td>&nbsp;&nbsp;&nbsp;</td>
 
@@ -64,19 +58,16 @@
                 </tbody>
 
             </table>
+
+          <div class="col-md-3 mx-auto float-left atiti mt-2">
+            <%= link_to '編集する',edit_admin_ore_path(@ore), class: 'btn btn-success btn-block mb-3' %>
+          </div>
+
         </div>
 
     </div>
 
    <div class="m-md-1"><br></div>
-
-   <div class="row">
-
-    <div class="action center-block mx-auto">
-        <%= link_to '編集する',edit_admin_ore_path(@ore), class: 'btn btn-success btn-block' %>
-    </div>
-
-   </div>
 
  </div>
 

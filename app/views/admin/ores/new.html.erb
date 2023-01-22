@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
 
-    <h4 class="col-md-2 mx-auto text-center teo mt-5 mb-4">
+    <h4 class="col-md-2 mx-auto text-center teo mt-5 mb-4 pikari ">
       <strong>鉱石一覧</strong>
     </h4>
 
   </div>
 
   <div class="col-md-6 mx-auto">
-  <%= form_with model: @ore, url: admin_ores_path do |f| %>
+    <%= form_with model: @ore, url: admin_ores_path, method: :post do |f| %>
 
     <div class="form-group row">
 

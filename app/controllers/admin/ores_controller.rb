@@ -13,9 +13,9 @@ class Admin::OresController < ApplicationController
     tag_list = params[:ore][:stone].split(',')
     if @ore.save!
        @ore.save_ores(tag_list)
-       redirect_to admin_ores_path,notice:'投稿完了しました:)'
+       redirect_to admin_ore_path(@ore.id),notice:'投稿完了しました:)'
     else
-       redirect_to admin_ore_path(@ore.id)
+       redirect_to admin_ores_path
     end
   end
 

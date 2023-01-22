@@ -3,7 +3,7 @@
 
 .ness{
       background-color: #ADB9CA;
-      height: 85px;
+      height: 95px;
 }
 
 
@@ -39,7 +39,7 @@
 }
 
 .atora{
-      background-color: rgba(255,215,0,0.5);
+      background-color: rgba(243,152,0,0.5);
 }
 
 .haku{
@@ -73,10 +73,28 @@ table.sora{
 }
 
 .domon{
-        background-color: rgba(245,206,64,0.5);
+        background-color: rgba(2,135,96,0.5);
 }
 
 .suiheisen{
             width: 70%;
             margin: auto;
+}
+
+// 見出しの文字サイズ用
+.pikari{
+          font-size: 30px;
+}
+
+.atiti{
+        padding-left: 0px;
+}
+
+// テーブル幅
+.doyon{
+        width: 150px;
+}
+
+table.dessize{
+      border: 2px #206865 solid;
 }
