@@ -19,7 +19,7 @@ class Public::RankingsController < ApplicationController
   end
 
   def confirm
-    @ranking = Ranking.new(ranking_params)。
+    @ranking = Ranking.new(ranking_params)
     @ranking.customer_id = current_customer.id
     @ore = Ore.find(ranking_params[:ore_id])
     # # 装飾品を選択
