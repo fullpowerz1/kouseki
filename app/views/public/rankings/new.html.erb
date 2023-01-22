@@ -58,18 +58,18 @@
             </div>
 
             <!--装飾品-->
-            <!--<div class="ml-3 mt-3">-->
+            <div class="ml-3 mt-3">
               <%= f.radio_button :select_material, 1 %>
               <%= f.label :amulet, "装飾品" %>
 
               <!--装飾品のフィールド-->
-            <!--  <div class="row">-->
-            <!--    <div class="col-4 mt-2">-->
+              <div class="row">
+                <div class="col-4 mt-2">
                   <%= f.text_field :amulet, placeholder: "ピアス", size: 40 %>
-            <!--    </div>-->
-            <!--  </div>-->
+                </div>
+              </div>
 
-            <!--</div>-->
+            </div>
 
           <!--@oreが無い時に-->
           <% if @ore.present? %>

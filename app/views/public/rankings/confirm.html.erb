@@ -56,6 +56,7 @@
     <%= f.hidden_field :ore_id, value: @ore.id %>
     <%= f.hidden_field :amount, value: @ranking.amount %>
 
+    <!--装飾品を入れたい場合-->
     <% if @decoration.present? %>
      <%= f.hidden_field :amulet, value: @decoration.amulet %>
     <% end %>
