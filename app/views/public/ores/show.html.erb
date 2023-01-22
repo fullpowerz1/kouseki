@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <!--ジャンル検索-->
-    <div class="col-md-2">
+    <div class="col-md-2 mt-2">
       <%= render 'layouts/search', genres: @genres %>
     </div>
 
-    <div class='col-md-4'>
-      <%= image_tag @ore.image, size: "200x200" %>
+    <div class='col-md-4 mt-2'>
+      <%= image_tag @ore.image, size: "180x180" %>
     </div>
 
-    <div class='col-md-6'>
+    <div class='col-md-6 mt-2'>
       <!--stoneはnameカラムと同意義-->
       <h2><%= @ore.stone %></h2>
       <p><%= @ore.introduction %></p><br>
@@ -24,7 +24,7 @@
             <!--hidden_field-->
               <%= f.hidden_field :ore_id, value: @ore.id %>
             <!--ランキング入力ボタン-->
-            <div class="col-md-3">
+            <div>
               <%= f.submit 'ランキングへ移動', class: "btn btn-success" %>
             </div>
 

@@ -1,11 +1,11 @@
 <% if ranking.favorited_by?(current_customer) %>
     <%= link_to ranking_favorites_path(ranking.id), method: :delete, remote: true do %>
-      <i class="fa-solid fa-star"></i>
+      <i class="fas fa-star"></i>
       <%= ranking.favorites.count %> いいね
     <% end %>
   <% else %>
     <%= link_to ranking_favorites_path(ranking.id), method: :post, remote: true do %>
-      <i class="fa-solid fa-star"></i>
+      <i class="fas fa-star"></i>
       <%= ranking.favorites.count %> いいね
     <% end %>
   <% end %>
