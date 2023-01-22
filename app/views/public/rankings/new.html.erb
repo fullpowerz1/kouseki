@@ -59,13 +59,13 @@
 
             <!--装飾品-->
             <!--<div class="ml-3 mt-3">-->
-              <%#= f.radio_button :select_material, 1 %>
-              <%#= f.label :type, "装飾品" %>
+              <%= f.radio_button :select_material, 1 %>
+              <%= f.label :amulet, "装飾品" %>
 
               <!--装飾品のフィールド-->
             <!--  <div class="row">-->
             <!--    <div class="col-4 mt-2">-->
-                  <%#= f.text_field :postcode, placeholder: "ピアス", size: 40 %>
+                  <%= f.text_field :amulet, placeholder: "ピアス", size: 40 %>
             <!--    </div>-->
             <!--  </div>-->
 
@@ -76,7 +76,7 @@
             <%= f.hidden_field :stone, value: @ore.stone %>
             <%= f.hidden_field :ore_id, value: @ore.id %>
           <% end %>
-            <%= f.hidden_field :amulet, value: 0 %>
+            <%#= f.hidden_field :amulet, value: 0 %>
             <%= f.hidden_field :name, value: current_customer.last_name %>
             <%= f.hidden_field :status, value: "gold" %>
             <!--確認画面ボタン-->

@@ -15,19 +15,17 @@
 
     <tbody>
 
-     <%# @ranking.each do |ranking| %>
       <tr>
 
        <td>
-         <%#= @ranking.ore.stone %>
+         <%= @ranking.ore.stone %>
        </td>
 
        <td>
-         <%#= @ranking.ore.amount %>
+         <%= @ranking.amount %>
        </td>
 
       </tr>
-     <%# end %>
 
     </tbody>
 
@@ -47,7 +45,7 @@
      <!--ランキングの説明-->
      <strong class="d-inline">ランキング用鉱石</strong>
      <p class="d-inline">
-        <%#= @ranking.select_material_i18n %>
+        <%= @ranking.ore.stone + "x" + @ranking.amount.to_s %>
      </p>
 
    </div>
@@ -57,6 +55,10 @@
     <%= f.hidden_field :rank, :value => @ranking.rank %>
     <%= f.hidden_field :ore_id, value: @ore.id %>
     <%= f.hidden_field :amount, value: @ranking.amount %>
+
+    <% if @decoration.present? %>
+     <%= f.hidden_field :amulet, value: @decoration.amulet %>
+    <% end %>
 
     <div class="col-7">
      <%= f.submit '情報を確定する', class: "btn btn-success" %>
