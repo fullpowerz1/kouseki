@@ -73,7 +73,7 @@
       </div>
 
       <div class="col-md-10 text-left">
-        <%= f.select :status, Ranking.statuses.keys.map {|k| [I18n.t("enums.status.#{k}"), k]}, {}, {class: 'form-control seki'} %>
+        <%= f.select :status, Ranking.statuses.keys.map {|k| [I18n.t("enums.ranking.status.#{k}"), k]}, {}, {class: 'form-control seki'} %>
         <%= f.submit '更新',class: "btn btn-success" %>
       </div>
 
@@ -102,7 +102,7 @@
 
             <tr>
               <td>
-               <%= @ranking.ore %>
+               <%= @ranking.ore.stone %>
               </td>
 
               <td>
@@ -110,7 +110,7 @@
               </td>
 
               <td>
-                <%= @ranking.rank %>
+                <%= @ranking.rank_i18n %>
               </td>
             </tr>
         </tbody>
