@@ -69,12 +69,12 @@
     <div class="order row">
 
       <div class="col-md-2 text-left">
-        <strong>ランキングステータス</strong>
+        <strong>ユーザーへのオススメ度設定</strong>
       </div>
 
       <div class="col-md-10 text-left">
         <%= f.select :status, Ranking.statuses.keys.map {|k| [I18n.t("enums.ranking.status.#{k}"), k]}, {}, {class: 'form-control seki'} %>
-        <%= f.submit '更新',class: "btn btn-success" %>
+        <%= f.submit '更新',class: "btn btn-success mt-2" %>
       </div>
 
     </div>

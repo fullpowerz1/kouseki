@@ -2,9 +2,9 @@
     enums:
       ranking:
         status:
-          gold: "ゴールド"
-          silver: "シルバー"
-          bronze: "ブロンズ"
+          gold: "100%"
+          silver: "50%"
+          bronze: "80%"
         rank:
           rank1: "1位"
           rank2: "2位"
