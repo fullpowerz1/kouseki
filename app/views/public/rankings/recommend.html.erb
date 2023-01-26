@@ -4,6 +4,23 @@
 
     <div class="col mx-auto mt-2">
       <h2 class="teo">オススメ度</h2>
+      <h3>注目鉱石</h3>
+
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <% @ores.each do |ore| %>
+            <div clas="col-3">
+
+              <%= image_tag ore.image, size: "180x180" %>
+              <%= ore.introduction %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+
     </div>
 
   </div>

@@ -49,8 +49,8 @@ class Public::RankingsController < ApplicationController
   end
 
   def recommend
+    @ores = Ore.where(id: Ranking.where(status:"silver").where(customer_id: current_customer.id).pluck('ore_id'))
   end
-
   private
 
   def ranking_params
