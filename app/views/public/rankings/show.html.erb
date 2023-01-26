@@ -28,11 +28,16 @@
           </td>
         </tr>
 
-        <!--後に集計ページへ飛ぶリンクを作る。-->
+        <!--後にランキングページへ飛ぶリンクを作る。-->
         <tr>
           <td class="atora">ユーザーへのオススメ度</td>
+
           <td>
             <%= @ranking.status_i18n %>
+          </td>
+
+          <td>
+            <%= link_to "オススメ度へ", rankings_recommend_path %>
           </td>
         </tr>
 

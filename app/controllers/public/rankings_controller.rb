@@ -48,6 +48,9 @@ class Public::RankingsController < ApplicationController
     @stone_comment = StoneComment.new
   end
 
+  def recommend
+  end
+
   private
 
   def ranking_params

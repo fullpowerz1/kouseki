@@ -29,6 +29,7 @@ scope module: :public do
   post 'rankings/confirm' => 'rankings#confirm'
   get 'rankings/complete' => 'rankings#complete'
   get 'rankings/bookmark' => 'rankings#bookmark'
+  get 'rankings/recommend' => 'rankings#recommend'
 
   resources :rankings, only: [:new,:create,:index,:show] do
     resource :favorites, only: [:create, :destroy]
