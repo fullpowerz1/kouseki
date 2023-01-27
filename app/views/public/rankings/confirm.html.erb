@@ -4,12 +4,12 @@
   <!--鉱石のテーブル-->
   <div class="col-8">
 
-    <table class="sora">
+    <table class="havyarms mt-2">
 
      <thead>
       <tr>
-       <th class="madoka">鉱石名</th>
-       <th class="madoka">数量</th>
+       <th class="sora">鉱石名</th>
+       <th class="sora">数量</th>
       </tr>
      </thead>
 
@@ -17,11 +17,11 @@
 
       <tr>
 
-       <td>
+       <td class="sora">
          <%= @ranking.ore.stone %>
        </td>
 
-       <td>
+       <td class="sora">
          <%= @ranking.amount %>
        </td>
 
@@ -61,7 +61,7 @@
      <%= f.hidden_field :amulet, value: @decoration.amulet %>
     <% end %>
 
-    <div class="col-7">
+    <div class="col-7 mt-2">
      <%= f.submit '情報を確定する', class: "btn btn-success" %>
     </div>
   <% end %>

@@ -47,11 +47,18 @@
 }
 
 .haku{
-      background-color: rgba(255,255,255,0.5)
+      background-color: rgba(255,255,255,0.5);
 }
 
 table.sora{
       border: 2px #000000 solid;
+}
+
+th,td.sora{
+            border: solid 2px #000000;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(171,206,216,0.4);
 }
 
 .baba{
@@ -110,4 +117,10 @@ table.sandlock{
 .rei{
         background-color: #A22041;
         color: #FFFFFF;
+}
+
+table.havyarms{
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
 }
