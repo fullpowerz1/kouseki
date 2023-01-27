@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="teo pt-4">
+  <h1 class="teo mt-3">
     <%= @customer.full_name %>さんの
     <strong>会員情報編集</strong>
   </h1>
@@ -12,99 +12,107 @@
   <!--会員情報編集のテーブル-->
   <div class='row'>
     <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
-      <table class="table table-bordered border-dark haku">
+      <table class="havyarms zurasi">
 
         <tr class="form-group">
-          <th class="atora text-white">会員ID</th>
-          <td class="text-center">
+          <th class="atora2 kairi2 text-white">会員ID</th>
+          <td class="kairi2">
             <%= @customer.id %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"氏名"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :last_name, autofocus: true, placeholder:"令和" %>
           </td>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :first_name, placeholder:"道子" %>
           </td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"フリガナ"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :last_name_kana, placeholder:"レイワ" %>
           </td>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :first_name_kana, placeholder:"ミチコ" %>
           </td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"郵便番号"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :postal_code, placeholder:"0000000" %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"住所"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0" %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"電話番号"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.text_field :telephone_number, placeholder:"0000000000" %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"メールアドレス"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.email_field :email, placeholder:"sample@example.com" %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
         <tr class="form-group">
-          <th class="atora text-white">
+          <th class="atora2 kairi2 text-white">
             <%= f.label :"会員ステータス"%>
           </th>
 
-          <td>
+          <td class="kairi2">
             <%= f.radio_button :is_deleted, :false %>
               <%= f.label :is_deleted, "有効" %>
             <%= f.radio_button :is_deleted, :true %>
               <%= f.label :is_deleted, "退会" %>
           </td>
+          <td class="kairi2"></td>
         </tr>
 
       </table>
 
-      <%= f.submit '変更を保存', class:'btn btn-success' %>
+      <div class="tyuubu mt-3">
+        <%= f.submit '変更を保存', class:'btn btn-success' %>
+      </div>
     <% end %>
   </div>
 

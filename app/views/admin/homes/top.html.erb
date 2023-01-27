@@ -13,14 +13,14 @@
   <!--ランキングのテーブル-->
   <div class='row'>
     <div class='col-md-8 offset-md-1 pt-4'>
-      <table class='table sora'>
+      <table class="havyarms">
 
-        <thead class="atora text-white">
+        <thead class="araya text-white">
           <tr>
-            <th>登録日時</th>
-            <th>登録者</th>
-            <th>登録個数</th>
-            <th>順位</th>
+            <th class="kaiki">登録日時</th>
+            <th class="kaiki">登録者</th>
+            <th class="kaiki">登録個数</th>
+            <th class="kaiki">順位</th>
           </tr>
         </thead>
 
@@ -28,19 +28,19 @@
         <% @rankings.each do |ranking| %>
           <tbody class="haku">
             <tr>
-              <td>
+              <td class="kaiki">
                 <%= link_to ranking.set_date, admin_ranking_path(ranking.id) %>
               </td>
 
-              <td>
+              <td class="kaiki">
                 <%= ranking.customer.full_name %>
               </td>
 
-              <td class="text-senter">
+              <td class="kaiki">
                 <%= ranking.amount %>
               </td>
 
-              <td class="text-senter">
+              <td class="kaiki">
                 <%= ranking.rank_i18n %>
               </td>
 
