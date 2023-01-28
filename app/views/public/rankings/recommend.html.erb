@@ -8,17 +8,24 @@
 
 
       <div class="container-fluid">
-        <div class="row">
+        <% @ores.each do |ore| %>
+          <div class="row">
 
-          <% @ores.each do |ore| %>
-            <div clas="col-3">
 
-              <%= image_tag ore.image, size: "180x180" %>
-              <%= ore.introduction %>
+            <div class="d-flex">
+              <div>
+                <%= image_tag ore.image, size: "180x180" %>
+              </div>
+
+              <div class="zurasi">
+                <%= ore.introduction %>
+              </div>
+
             </div>
-          <% end %>
 
-        </div>
+
+          </div>
+        <% end %>
       </div>
 
     </div>
