@@ -12,11 +12,11 @@
     </h5>
 
     <!--編集ボタン-->
-  <%# if @customer.last_name != "user" %>
+  <% if @customer.last_name != "user" %>
     <div class="col col-md-3">
       <%= link_to "　編集する　", customers_information_edit_path, class: "btn btn-success btn-block" %>
     </div>
-  <%# end %>
+  <% end %>
 
   </div>
 

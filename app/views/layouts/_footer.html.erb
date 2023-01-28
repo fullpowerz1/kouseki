@@ -2,7 +2,7 @@
   <div class="container mb-5">
     <div class="row no-gutters">
 
-      <% unless customer_signed_in? %>
+      <% unless customer_signed_in? || request.path_info == '/admin/sign_in' || admin_signed_in? %>
         <div class='col-md-5 offset-md-5 d-flex align-items-center'>
           <button type="button" class="btn btn-light mt-5">
             <%= link_to 'ゲストログイン（お試し用）', public_guest_sign_in_path, method: :post %>

@@ -1,7 +1,5 @@
 class Public::OresController < ApplicationController
   def index
-    # ページネーション
-    @ores = Ore.page(params[:page]).per(8).order('created_at DESC')
     @genres = Genre.all
     if params[:search].present?
       ores = Ore.ores_search(params[:search])
@@ -12,7 +10,8 @@ class Public::OresController < ApplicationController
       ores = Ore.all.order(created_at: :desc)
     end
     @tag_lists = Tag.all
-    @ores = Kaminari.paginate_array(ores).page(params[:page]).per(10)
+    # ページネーション
+    @ores = Kaminari.paginate_array(ores).page(params[:page]).per(8)
   end
 
   def edit

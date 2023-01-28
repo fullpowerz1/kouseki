@@ -43,9 +43,13 @@ class Public::RankingsController < ApplicationController
 
 
   def show
+    if params[:id] == "confirm"
+      redirect_to new_ranking_path
+    else
     @ranking = Ranking.find(params[:id])
     #byebug
     @stone_comment = StoneComment.new
+    end
   end
 
   def recommend

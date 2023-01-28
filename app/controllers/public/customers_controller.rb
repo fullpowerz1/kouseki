@@ -1,6 +1,6 @@
 class Public::CustomersController < ApplicationController
 
-   # before_action :ensure_guest_user, only: [:edit]
+   before_action :ensure_guest_user, only: [:edit]
 
    def show
      @customer = current_customer
@@ -34,12 +34,11 @@ class Public::CustomersController < ApplicationController
    private
 
    # ↓メンターに聞いてから
-   # def ensure_guest_user
-   #    @customer = Customer.find(params[:id])
-   #    if @customer.last_name == "user"
-   #       redirect_to root_path(current_user) , notice: 'ゲストユーザーは会員編集画面へは遷移できません。'
-   #    end
-   # end
+   def ensure_guest_user
+      if current_customer.last_name == "user"
+         redirect_to root_path(current_user) , notice: 'ゲストユーザーは会員編集画面へは遷移できません。'
+      end
+   end
 
    def customer_params
      params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email, :postal_code, :address, :telephone_number, :password, :image)

@@ -4,15 +4,17 @@
 .ness{
       background-color: #ADB9CA;
     //   分からないからメンターに聞く
-    //   background-image: url(assets/daiasousyou.jpg);
+      background-image: url('../images/housekinokuni.png');
     //   background-position: 160px;
-    //   background-repeat: no-repeat;
+      background-repeat: repeat;
       height: 110px;
 }
 
 
 .ness2{
         background-color: #ADB9CA;
+        background-image: url('../images/housekinokuni.png');
+        background-repeat: repeat;
         height: 250px;
 }
 
@@ -54,7 +56,7 @@ table.sora{
       border: 2px #000000 solid;
 }
 
-th,td.sora{
+th.sora,td.sora{
             border: solid 2px #000000;
             padding: 10px;
             text-align: center;
@@ -129,13 +131,13 @@ table.havyarms{
       background-color: rgba(77,67,152,1);
 }
 
-th,td.kaiki{
+th.kaiki,td.kaiki{
             border: solid 2px #000000;
             padding: 10px;
             text-align: center;
 }
 
-th,td.kairi2{
+th.kairi2,td.kairi2{
             border: solid 2px #EB6238;
             padding: 10px;
             text-align: center;
