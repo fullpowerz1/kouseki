@@ -6,6 +6,13 @@
     <% end %>
   <% end %>
 
+  <!--admin側のみのロゴ-->
+  <% if admin_signed_in? %>
+    <%= link_to admin_path, class: "float-left d-inline" do %>
+      <%= image_tag "admin_logo.png", size: "110x110" %>
+    <% end %>
+  <% end %>
+
   <div class="container mb-5 d-inline">
     <div class="row">
 
