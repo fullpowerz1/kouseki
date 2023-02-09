@@ -36,8 +36,9 @@
 
             <td>
               <%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-primary" %>
+              <%= link_to "削除する", admin_genre_path(genre.id), class: 'btn btn-sm btn-danger', method: :delete %>
             </td>
-            <!--削除ボタンを作る-->
+
           </tr>
         <% end %>
       </tbody>

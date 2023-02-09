@@ -49,7 +49,7 @@ end
   namespace :admin do
     resources :ores, except: [:destroy]
 
-    resources :genres, only: [:index,:create,:edit,:update]
+    resources :genres, only: [:index,:create,:edit,:update,:destroy]
 
     resources :customers, only: [:index,:show,:edit,:update]
 
