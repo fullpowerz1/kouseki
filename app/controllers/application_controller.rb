@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+# 後々アクセス権限を加える
+
 # ユーザー管理用のbefore_action
   before_action :configure_permitted_parameters, if: :devise_controller?
 # キーワード検索機能のbefore_action
