@@ -9,6 +9,8 @@ class Ranking < ApplicationRecord
       created_at.strftime("%Y/%m/%d %H:%M:%S")
     end
 
+    # バリデーションを後々入れる
+
     # favoritesテーブル内に存在するか調べるメソッド
     def favorited_by?(customer)
       favorites.exists?(customer_id: customer.id)
