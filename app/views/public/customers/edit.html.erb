@@ -1,5 +1,16 @@
 <div class="container">
 
+  <!--レイアウトが崩れる為失敗のバリデーション-->
+    <!--<%# if @customer.errors.any? %>-->
+      <!--  <%#= @customer.errors.count %>件のエラーが発生しました-->
+        <!--  <ul>-->
+        <!--    <%# @customer.errors.full_messages.each do |message| %>-->
+        <!--      <li><%#= message %></li>-->
+        <!--    <%# end %>-->
+        <!--  </ul>-->
+    <!--<%# end %>-->
+
+
   <div class="row mb-5">
     <h4 class="col col-md-2 offset-md-2 text-center mt-3 teo">
       <strong>会員情報編集</strong>

@@ -12,11 +12,11 @@ class Customer < ApplicationRecord
 
   validates :last_name, presence: true
   validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
-  validates :postal_code, presence: true
+  validates :last_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} #カタカナのみ
+  validates :first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} #カタカナのみ
+  validates :postal_code, presence: true, length: { is: 7 }, numericality: {only_integer: true} #8文字と整数のみ
   validates :address, presence: true
-  validates :telephone_number, presence: true
+  validates :telephone_number, presence: true, length: { is: 11 }, uniqueness: true, numericality: {only_integer: true} #11文字と整数のみ、重複チェック
 
   #名前をフルネームで記述できるように
   def full_name
