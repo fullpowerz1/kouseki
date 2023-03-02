@@ -1,4 +1,6 @@
 class Admin::RankingsController < ApplicationController
+  # adminの管理者権限
+  before_action :authenticate_admin!
 
   def show
     @ranking = Ranking.find(params[:id])

@@ -1,4 +1,7 @@
 class Admin::OresController < ApplicationController
+  # adminの管理者権限
+  before_action :authenticate_admin!
+
   def index
     @ores = Ore.all
     @ore = Ore.new
