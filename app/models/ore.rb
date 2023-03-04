@@ -5,6 +5,8 @@ class Ore < ApplicationRecord
     belongs_to :genre
     has_one_attached :image
 
+  # validatesを後ほど作る。
+
   # ジャンル検索のメソッド
   def self.looks(search, word)
     if search == "perfect_match"
