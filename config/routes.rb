@@ -47,7 +47,7 @@ end
   get "admin" => 'admin/homes#top'
 
   namespace :admin do
-    resources :ores, except: [:destroy]
+    resources :ores
 
     resources :genres, only: [:index,:create,:edit,:update,:destroy]
 

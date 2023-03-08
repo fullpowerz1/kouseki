@@ -32,7 +32,9 @@
         <tr>
           <td><%= ore.id %></td>
           <td><%= link_to ore.stone, admin_ore_path(ore) %></td>
-          <td><%= ore.stone %></td>
+          <td><%= ore.stone %>
+              <%= link_to "削除する", admin_ore_path(ore.id), class: 'btn btn-sm btn-danger offset-md-2', method: :delete %>
+          </td>
 
           <% if ore.is_active == true %>
             <td class="text-success font-weight-bold">上位</td>

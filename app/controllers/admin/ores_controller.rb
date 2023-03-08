@@ -37,6 +37,12 @@ class Admin::OresController < ApplicationController
     redirect_to admin_ore_path(@ore)
   end
 
+  def destroy
+    @ore = Ore.find(params[:id])
+    @ore.destroy
+    redirect_to admin_ores_path
+  end
+
   private
 
   def ore_params
