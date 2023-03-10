@@ -49,6 +49,7 @@ class Public::RankingsController < ApplicationController
     @ranking = Ranking.find(params[:id])
     #byebug
     @stone_comment = StoneComment.new
+    # フラッシュメッセージを作る
     end
   end
 
