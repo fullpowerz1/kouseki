@@ -1,6 +1,7 @@
 class Genre < ApplicationRecord
     has_many :ores, dependent: :destroy
 
+    # ジャンル検索が機能していないので、調べる。
     def self.looks(search, word)
       if search == "perfect_match"
         @genre = Genre.where("name LIKE?", "#{word}")
