@@ -5,7 +5,7 @@ class Ore < ApplicationRecord
     belongs_to :genre
     has_one_attached :image
 
-  # validatesを後ほど作る。複数か？
+  # validatesを後ほど作る。複数か？それとも
 
   # ジャンル検索のメソッド
   def self.looks(search, word)
