@@ -1,5 +1,5 @@
 class Public::OresController < ApplicationController
-  # コントローラーに問題が無いか調べる
+  # コントローラーに問題が無いか調べるぞ
   def index
     @genres = Genre.all
     if params[:search].present?
