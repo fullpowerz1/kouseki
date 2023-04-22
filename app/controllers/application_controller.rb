@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-# 後々アクセス権限を加える。そのうち
+# 後々アクセス権限を加える。そのうちです。
 
 # ユーザー管理用のbefore_action
   before_action :configure_permitted_parameters, if: :devise_controller?
