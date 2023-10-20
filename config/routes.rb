@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-# 会員用1です。それから。
+# 会員用1です。そうです
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
